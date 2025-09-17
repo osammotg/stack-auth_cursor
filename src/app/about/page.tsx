@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -13,9 +13,9 @@ export default function Home() {
               </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-900 hover:text-gray-600">Home</Link>
+              <Link href="/" className="text-gray-600 hover:text-gray-900">Home</Link>
               <Link href="/products" className="text-gray-600 hover:text-gray-900">Products</Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link>
+              <Link href="/about" className="text-gray-900 hover:text-gray-600">About</Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-900">Contact</Link>
             </nav>
             <div className="flex items-center space-x-4">
@@ -35,150 +35,120 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 to-gray-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Step Into Style
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              Discover premium shoes that combine comfort, quality, and fashion
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/products" className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Shop Now
-              </Link>
-              <Link href="/about" className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                Learn More
-              </Link>
-            </div>
-          </div>
+      <section className="bg-gradient-to-r from-gray-900 to-gray-700 text-white py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">About SoleStyle</h1>
+          <p className="text-xl md:text-2xl text-gray-300">
+            Your trusted partner in premium footwear since 2020
+          </p>
         </div>
       </section>
 
-      {/* Featured Categories */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">Men's Shoes</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Men's Collection</h3>
-                <p className="text-gray-600 mb-4">From casual sneakers to formal dress shoes</p>
-                <Link href="/products?category=men" className="text-blue-600 hover:text-blue-800 font-semibold">
-                  Shop Men's →
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">Women's Shoes</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Women's Collection</h3>
-                <p className="text-gray-600 mb-4">Elegant heels, comfortable flats, and trendy sneakers</p>
-                <Link href="/products?category=women" className="text-pink-600 hover:text-pink-800 font-semibold">
-                  Shop Women's →
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">Kids' Shoes</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Kids' Collection</h3>
-                <p className="text-gray-600 mb-4">Durable and comfortable shoes for growing feet</p>
-                <Link href="/products?category=kids" className="text-green-600 hover:text-green-800 font-semibold">
-                  Shop Kids' →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
+      {/* Story Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { name: "Classic White Sneakers", price: "$89.99", image: "👟" },
-              { name: "Leather Dress Shoes", price: "$149.99", image: "👞" },
-              { name: "Running Shoes", price: "$119.99", image: "🏃" },
-              { name: "Casual Boots", price: "$129.99", image: "🥾" }
-            ].map((product, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-48 bg-gray-100 flex items-center justify-center text-6xl">
-                  {product.image}
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold mb-2">{product.name}</h3>
-                  <p className="text-gray-600 mb-4">{product.price}</p>
-                  <button className="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition-colors">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+              <p className="text-gray-600 mb-4">
+                Founded in 2020, SoleStyle began with a simple mission: to provide high-quality, 
+                comfortable, and stylish footwear for everyone. We believe that the right pair of 
+                shoes can transform not just your outfit, but your entire day.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Our journey started when our founder, Sarah Johnson, struggled to find shoes that 
+                combined style, comfort, and durability. Frustrated with the limited options in the 
+                market, she decided to create a brand that would prioritize all three.
+              </p>
+              <p className="text-gray-600">
+                Today, SoleStyle has grown into a trusted name in footwear, serving thousands of 
+                customers worldwide with our carefully curated collection of premium shoes.
+              </p>
+            </div>
+            <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center text-6xl">
+              👟
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Values Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Free Shipping</h3>
-              <p className="text-gray-600">Free shipping on orders over $50</p>
+              <h3 className="text-xl font-semibold mb-2">Quality First</h3>
+              <p className="text-gray-600">We never compromise on quality. Every shoe in our collection is carefully selected and tested for durability and comfort.</p>
             </div>
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Quality Guarantee</h3>
-              <p className="text-gray-600">30-day money-back guarantee</p>
+              <h3 className="text-xl font-semibold mb-2">Customer Care</h3>
+              <p className="text-gray-600">Your satisfaction is our priority. We provide exceptional customer service and support throughout your shopping journey.</p>
             </div>
             <div className="text-center">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
-              <p className="text-gray-600">Customer support whenever you need it</p>
+              <h3 className="text-xl font-semibold mb-2">Innovation</h3>
+              <p className="text-gray-600">We continuously innovate to bring you the latest trends and technologies in footwear design and comfort.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Team Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-gray-200 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                👩‍💼
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Sarah Johnson</h3>
+              <p className="text-gray-600 mb-2">Founder & CEO</p>
+              <p className="text-sm text-gray-500">Passionate about creating comfortable, stylish footwear for everyone.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-gray-200 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                👨‍💻
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Mike Chen</h3>
+              <p className="text-gray-600 mb-2">Head of Design</p>
+              <p className="text-sm text-gray-500">Bringing innovative designs and cutting-edge technology to our products.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-gray-200 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                👩‍🎨
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Emma Rodriguez</h3>
+              <p className="text-gray-600 mb-2">Customer Experience Manager</p>
+              <p className="text-sm text-gray-500">Ensuring every customer has an exceptional shopping experience.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-16 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-gray-300 mb-8">Get the latest updates on new arrivals and exclusive offers</p>
-          <div className="max-w-md mx-auto flex gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900"
-            />
-            <button className="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Subscribe
-            </button>
-          </div>
+          <h2 className="text-3xl font-bold mb-4">Ready to Find Your Perfect Pair?</h2>
+          <p className="text-gray-300 mb-8">Explore our collection and discover shoes that match your style and comfort needs.</p>
+          <Link href="/products" className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            Shop Now
+          </Link>
         </div>
       </section>
 
